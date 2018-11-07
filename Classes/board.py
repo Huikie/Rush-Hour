@@ -1,3 +1,5 @@
+class Board:
+
 starting_grid = [
 [' ', ' ', 'P', 'b', 'b', 'G'],
 [' ', ' ', 'P', ' ', ' ', 'G'],
