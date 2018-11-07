@@ -1,4 +1,7 @@
 class Board:
+""""
+This is the class Board
+""""
 
 starting_grid = [
 [' ', ' ', 'P', 'b', 'b', 'G'],
