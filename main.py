@@ -1,6 +1,6 @@
 from board import Board
 def main():
-    board = self.board
+    board = Board()
     counter1 = 0
     with open("Game_1.txt", "r") as file:
         for row in file:
@@ -8,8 +8,9 @@ def main():
             counter1 += 1
             for char in row:
                 counter2 += 1
-                board[counter1][counter2] = char
-    print(board)
+                if char != "\n":
+                    board.board[counter1][counter2] = char
+    print(board.board)
 
 
 
