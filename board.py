@@ -1,3 +1,4 @@
+from cars import Cars
 class Board:
 #"""
 #This is the class Board
