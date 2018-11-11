@@ -9,7 +9,7 @@ Game_1:
 - 6 2 vlaksauto's (5 zetten)
 - 3 3 vlaksauto's (4 zetten)
 
-> 5^6 * 4^3 = 1000000 = 10^5
+> 5^6 * 4^3 = 1000000 = 10^6
 
 Game_2:
 - 6 2(zelfde rij) vlaksauto's(3 zetten)
