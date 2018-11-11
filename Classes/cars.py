@@ -6,6 +6,8 @@ class Cars:
         self.cars = []
     def add(self, car):
         self.cars.append(car)
+    def move(self, car):
+        
 
 
 #self.car_list =  ['P', 'b', 'G', 't', 'O', 'd', 'c', 'r']

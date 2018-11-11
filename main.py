@@ -1,4 +1,5 @@
 from Classes.board import Board
+from Classes.cars import Cars
 def main():
     board = Board()
     counter1 = 0
@@ -16,6 +17,7 @@ def main():
                         dict[char] = [[counter1, counter2]]
                 if char != "\n":
                     board.board[counter1][counter2] = char
+    board.board.cars.add(dict)
     print(dict)
 
 
