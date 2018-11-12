@@ -1,5 +1,4 @@
 from Classes.board import Board
-from Classes.cars import Cars
 def main():
     board = Board()
     counter1 = 0

@@ -3,11 +3,9 @@ class Cars:
 #This is the class Board
 #"""
     def __init__(self):
-        self.cars = []
+        self.cars = {}
     def add(self, car):
-        self.cars.append(car)
-    def move(self, car):
-        
+        self.cars = car
 
 
 #self.car_list =  ['P', 'b', 'G', 't', 'O', 'd', 'c', 'r']
