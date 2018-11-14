@@ -18,6 +18,8 @@ def main():
                     board.board[counter1][counter2] = char
     board.cars.add(dict)
     print(board.cars.cars)
+    if board.move("C") == True:
+        print("yes")
 
 
 
