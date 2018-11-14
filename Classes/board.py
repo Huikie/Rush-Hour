@@ -17,10 +17,10 @@ class Board:
             # horzontaal
             for i in range(0, moves + 1):
                 for cordinate in self.cars.cars[car]:
-                    if not self.board[cordinate[0]][cordinate[0 + i]] == ".":
+                    if not self.board[cordinate[0]][cordinate[1] + 1] == ".":
                         print ("invalid move")
                         break
-            self.board.
+            self.board[cordinate]
 
 
             return True
