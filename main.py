@@ -17,9 +17,10 @@ def main():
                 if char != "\n":
                     board.board[counter1][counter2] = char
     board.cars.add(dict)
+    print(board.board)
     print(board.cars.cars)
-    if board.move("C") == True:
-        print("yes")
+    #if board.move("C") == True:
+        #print("yes")
 
 
 
