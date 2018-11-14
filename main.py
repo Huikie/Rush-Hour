@@ -19,7 +19,7 @@ def main():
     board.cars.add(dict)
     print(board.board)
     print(board.cars.cars)
-    if board.move("C", -1) == True:
+    if board.move("C", 1) == True:
         print("yes")
 
 
