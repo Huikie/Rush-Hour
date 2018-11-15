@@ -32,8 +32,8 @@ class Board:
                     lijst.append([cordinate[0], cordinate[1] + moves])
                     self.cars.cars[car] = lijst
                 return True
-            elif moves < 0:
                 # moves car to the left
+            elif moves < 0:
                 # checks if move is valid
                 for i in range(-1, moves -1, -1):
                     for cordinate in self.cars.cars[car]:
@@ -65,7 +65,7 @@ class Board:
                 for cordinate in self.cars.cars[car]:
                     lijst.append([cordinate[0] + moves, cordinate[1]])
                     self.cars.cars[car] = lijst
-
+                return True
                 #self.cars.cars[car] = lijst
                 #print(self.cars.cars[car])
             # moves cars up
