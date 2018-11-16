@@ -12,6 +12,24 @@ class Board:
 ['#', '#', '#', '#', '#', '#', '#', '#']
 ]
         self.cars = Cars()
+    def load_board(self, file):
+            self.board_text = file
+            counter1 = 0
+            dict = {}
+            print(self.board_text)
+            for row in self.board_text:
+                counter2 = 0
+                counter1 += 1
+                for char in row:
+                    counter2 += 1
+                    if char.isalpha():
+                        if char in dict:
+                            dict[char].append([counter1, counter2])
+                        else:
+                            dict[char] = [[counter1, counter2]]
+                    if char != "\n":
+                        self.board[counter1][counter2] = char
+            self.cars.add(dict)
     def move(self, car, moves):
         lijst = []
         # Move cars that are positioned horizontally
