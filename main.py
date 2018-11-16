@@ -1,15 +1,17 @@
-from Classes.board import Board
+from Algorithms.breathfirst import Breathfirst
 def main():
-    board = Board()
+    algorithm = Breathfirst()
     with open("Game_1.txt", "r") as file:
-        board.load_board(file)
+        algorithm.board.load_board(file)
 
-    print(board.board)
-    print(board.cars.cars)
-    if board.move("C",1) == True:
-        print("yes")
-    print(board. board)
-    print(board.cars.cars)
+    print(algorithm.board.board)
+    print(algorithm.board.cars.cars.keys())
+    algorithm.move(1)
+    # print(algorithm.board.cars.cars)
+    # if algorithm.board.move("C",1) == True:
+    #     print("yes")
+    # print(algorithm.board.board)
+    # print(algorithm.board.cars.cars)
 
 
 
