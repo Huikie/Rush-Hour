@@ -10,3 +10,20 @@ class Breathfirst:
                 print(self.board.cars.cars)
                 print(self.board.board)
         return True
+
+
+    def breathfirstSolver():
+        moveCount = 0
+        while not gameWon():
+            #If zz can be moved to >, move the car to > and gameWon()
+                #return gameWon()
+            #else:
+                #Do a random move and check again
+
+
+    def gameWon():
+        if ....
+            # If car zz reaches >, end breathfirst and game won
+            #return True
+        else
+            #return false
