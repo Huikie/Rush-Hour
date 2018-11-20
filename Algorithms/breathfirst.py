@@ -4,11 +4,24 @@ class Breathfirst:
         self.breathfirst = []
         self.board = Board()
     def move(self, moves):
-        for move in range(1, moves + 1):
-            for car in self.board.cars.cars.key():
-                board.move(car, move)
-                print(self.board.cars.cars)
-                print(self.board.board)
+        if moves < 0:
+            print(self.board.cars.cars.keys())
+            for move in range(-1, moves - 1, -1):
+                print (move)
+                for car in self.board.cars.cars.keys():
+                    if self.board.move(car, move) == True:
+                        print(self.board.cars.cars)
+                        print(self.board.board)
+        if moves > 0:
+            print(self.board.cars.cars.keys())
+            for move in range(1, moves + 1):
+                print (move)
+                for car in self.board.cars.cars.keys():
+                    if self.board.move(car, move) == True:
+                        print(self.board.cars.cars)
+                        print(self.board.board)
+        return True
+
         return True
 
 

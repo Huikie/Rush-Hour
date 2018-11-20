@@ -7,7 +7,7 @@ def main():
     print(algorithm.board.board)
     print(algorithm.board.cars.cars.keys())
     print(algorithm.board.cars.cars)
-    if algorithm.board.move("C",1) == True:
+    if algorithm.board.move("a",-3) == True:
          print("yes")
 
          print(algorithm.board.board)
