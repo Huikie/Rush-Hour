@@ -6,12 +6,12 @@ def main():
 
     print(algorithm.board.board)
     print(algorithm.board.cars.cars.keys())
-    #algorithm.move(1)
-    # print(algorithm.board.cars.cars)
-    # if algorithm.board.move("C",1) == True:
-    #     print("yes")
-    # print(algorithm.board.board)
-    # print(algorithm.board.cars.cars)
+    print(algorithm.board.cars.cars)
+    if algorithm.board.move("C",1) == True:
+         print("yes")
+
+         print(algorithm.board.board)
+         print(algorithm.board.cars.cars)
 
 
 
