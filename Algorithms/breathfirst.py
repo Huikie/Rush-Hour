@@ -9,7 +9,7 @@ class Breathfirst:
         self.counter = 0
     def move(self):
         for move in range(-1, -5, -1):
-            self.temp_board = copy.deepcopy(self.boards[0])
+            self.temp_board = copy.deepcopy(self.boards[self.counter])
             for car in self.board.cars.cars.keys():
                 if self.temp_board.move(car, move) != False:
                     self.counter += 1
@@ -17,15 +17,16 @@ class Breathfirst:
                     for i in self.boards:
                         print(i.board)
         for move in range(1, 5):
-            self.temp_board = copy.deepcopy(self.boards[0])
+            self.temp_board = copy.deepcopy(self.boards[self.counter])
             for car in self.board.cars.cars.keys():
                 if self.temp_board.move(car, move) != False:
                     self.counter += 1
                     self.boards.append(self.temp_board)
                     for i in self.boards:
                         print(i.board)
-
-        return True
+        self.counter =+ 1
+        if self.counter == 3:
+            return True
 
     # def breathfirstSolver():
     #     moveCount = 0
