@@ -35,7 +35,6 @@ class Board:
             self.cars.add(dict)
 
     def won(self):
-        print(self.cars.cars["z"])
         if self.cars.cars["z"][1][1]  ==  7:
             return True
         else:
@@ -74,7 +73,7 @@ class Board:
                 for cordinate in self.cars.cars[car]:
                     self.board[cordinate[0]][cordinate[1]] = "."
                 for cordinate in self.cars.cars[car]:
-                    self.board[cordinate[0]][cordinate[1]+ moves] = car
+                    self.board[cordinate[0]][cordinate[1] + moves] = car
                 for cordinate in self.cars.cars[car]:
                     lijst.append([cordinate[0], cordinate[1] + moves])
                     self.cars.cars[car] = lijst
