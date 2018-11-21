@@ -3,21 +3,30 @@ class Breathfirst:
     def __init__(self):
         self.breathfirst = []
         self.board = Board()
-        self.boards = {}
+        self.boards = []
+        self.cars = []
         self.counter = 0
     def move(self):
+        temp_board = []
+        temp_cars =[]
         for move in range(-1, -5, -1):
             print (move)
             for car in self.board.cars.cars.keys():
-                if self.board.move(car, move) == True:
-                    print(self.board.cars.cars)
-                    print(self.board.board)
+                if self.board.move(car, move) != False:
+                    self.counter += 1
+                    self.boards.append(self.board.board_temp)
+                    self.cars.append(self.board.car_temp)
+                    print(self.boards)
+                    print(self.cars)
         for move in range(1, 5):
             print (move)
             for car in self.board.cars.cars.keys():
-                if self.board.move(car, move) == True:
-                    print(self.board.cars.cars)
-                    print(self.board.board)
+                if self.board.move(car, move) != False:
+                    self.counter += 1
+                    self.boards.append(self.board.board_temp)
+                    self.cars.append(self.board.car_temp)
+                    print(self.boards)
+                    print(self.cars)
         return True
 
     # def breathfirstSolver():
