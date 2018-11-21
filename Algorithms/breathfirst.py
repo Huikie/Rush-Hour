@@ -8,23 +8,22 @@ class Breathfirst:
         self.cars = []
         self.counter = 0
     def move(self):
-        self.temp_board = copy.deepcopy(self.boards[0])
         for move in range(-1, -5, -1):
-            print (move)
+            self.temp_board = copy.deepcopy(self.boards[0])
             for car in self.board.cars.cars.keys():
                 if self.temp_board.move(car, move) != False:
                     self.counter += 1
-                    self.boards.append(self.board)
+                    self.boards.append(self.temp_board)
                     for i in self.boards:
                         print(i.board)
         for move in range(1, 5):
-            print (move)
+            self.temp_board = copy.deepcopy(self.boards[0])
             for car in self.board.cars.cars.keys():
                 if self.temp_board.move(car, move) != False:
                     self.counter += 1
-                    self.boards.append(self.board)
+                    self.boards.append(self.temp_board)
                     for i in self.boards:
-                        print(self.boards[1].board)
+                        print(i.board)
 
         return True
 
