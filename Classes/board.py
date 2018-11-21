@@ -34,6 +34,13 @@ class Board:
                         self.board[counter1][counter2] = char
             self.cars.add(dict)
 
+    def win(self):
+        if z[1][1]  ==  7:
+            return True
+        else:
+            return False
+
+
     def move(self, car, moves):
         lijst = []
         self.board_temp = copy.deepcopy(self.board)
