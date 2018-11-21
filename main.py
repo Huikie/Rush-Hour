@@ -9,11 +9,10 @@ def main():
     #print(algorithm.board.cars.cars)
     if algorithm.move() == True:
          print("yes")
+         for board in algorithm.boards:
+             print(board.board)
     if algorithm.board.won() == True:
         print("yes")
-
-    print(algorithm.board.board)
-    print(algorithm.board.cars.cars)
 
 
 

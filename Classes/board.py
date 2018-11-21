@@ -54,14 +54,14 @@ class Board:
                 for i in range(1, moves + 1):
                     for cordinate in self.cars.cars[car]:
                         if self.board[cordinate[0]][cordinate[1] + i] != "." and self.board[cordinate[0]][cordinate[1] + i] != car :
-                            print ("invalid move")
                             return False
+                #print(self.board)
                 for cordinate in self.cars.cars[car]:
                     self.board[cordinate[0]][cordinate[1]] = "."
                 for cordinate in self.cars.cars[car]:
-                    self.board[cordinate[0]+ moves][cordinate[1]] = car
+                    self.board[cordinate[0]][cordinate[1]+ moves] = car
                 for cordinate in self.cars.cars[car]:
-                    lijst.append([cordinate[0] + moves, cordinate[1]])
+                    lijst.append([cordinate[0], cordinate[1] + moves])
                     self.cars.cars[car] = lijst
                 return True
                 # moves car to the left
@@ -70,14 +70,13 @@ class Board:
                 for i in range(-1, moves -1, -1):
                     for cordinate in self.cars.cars[car]:
                         if self.board[cordinate[0]][cordinate[1] + i] != "." and self.board[cordinate[0]][cordinate[1] + i] != car :
-                            print ("invalid move")
                             return False
                 for cordinate in self.cars.cars[car]:
                     self.board[cordinate[0]][cordinate[1]] = "."
                 for cordinate in self.cars.cars[car]:
-                    self.board[cordinate[0]+ moves][cordinate[1]] = car
+                    self.board[cordinate[0]][cordinate[1]+ moves] = car
                 for cordinate in self.cars.cars[car]:
-                    lijst.append([cordinate[0] + moves, cordinate[1]])
+                    lijst.append([cordinate[0], cordinate[1] + moves])
                     self.cars.cars[car] = lijst
                 return True
         # Move cars that are positioned vertically
@@ -88,7 +87,6 @@ class Board:
                 for i in range(1, moves + 1):
                     for cordinate in self.cars.cars[car]:
                         if self.board[cordinate[0] + i][cordinate[1]] != "." and self.board[cordinate[0] + i][cordinate[1]] != car :
-                            print ("invalid move")
                             return False
                 for cordinate in self.cars.cars[car]:
                     self.board[cordinate[0]][cordinate[1]] = "."
@@ -106,7 +104,6 @@ class Board:
                 for i in range(-1, moves -1, -1):
                     for cordinate in self.cars.cars[car]:
                         if self.board[cordinate[0] + i][cordinate[1]] != "." and self.board[cordinate[0] + i][cordinate[1]] != car :
-                            print ("invalid move")
                             return False
                 for cordinate in self.cars.cars[car]:
                     self.board[cordinate[0]][cordinate[1]] = "."
