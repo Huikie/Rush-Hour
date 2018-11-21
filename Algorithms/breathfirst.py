@@ -8,25 +8,27 @@ class Breathfirst:
         self.cars = []
         self.counter = 0
     def move(self):
-        for move in range(-1, -5, -1):
-            self.temp_board = copy.deepcopy(self.boards[self.counter])
-            for car in self.board.cars.cars.keys():
-                if self.temp_board.move(car, move) != False:
-                    self.counter += 1
-                    self.boards.append(self.temp_board)
-                    for i in self.boards:
-                        print(i.board)
-        for move in range(1, 5):
-            self.temp_board = copy.deepcopy(self.boards[self.counter])
-            for car in self.board.cars.cars.keys():
-                if self.temp_board.move(car, move) != False:
-                    self.counter += 1
-                    self.boards.append(self.temp_board)
-                    for i in self.boards:
-                        print(i.board)
-        self.counter =+ 1
-        if self.counter == 3:
-            return True
+        for j in self.boards:
+            for move in range(-1, -5, -1):
+                self.temp_board = copy.deepcopy(self.boards[self.counter])
+                for car in self.board.cars.cars.keys():
+                    if self.temp_board.move(car, move) != False:
+                        self.boards.append(self.temp_board)
+                        print(self.boards[self.counter].board)
+            for move in range(1, 5):
+                self.temp_board = copy.deepcopy(self.boards[self.counter])
+                for car in self.board.cars.cars.keys():
+                    if self.temp_board.move(car, move) != False:
+                        self.boards.append(self.temp_board)
+                        print(self.boards[self.counter].board)
+            #for i in self.boards:
+                #print(i.board)
+
+            self.counter += 1
+            #print(self.boards[self.counter].board)
+            print(self.counter)
+            if self.counter == 6:
+                return True
 
     # def breathfirstSolver():
     #     moveCount = 0
