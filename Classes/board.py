@@ -34,8 +34,9 @@ class Board:
                         self.board[counter1][counter2] = char
             self.cars.add(dict)
 
-    def win(self):
-        if z[1][1]  ==  7:
+    def won(self):
+        print(self.cars.cars["z"])
+        if self.cars.cars["z"][1][1]  ==  7:
             return True
         else:
             return False
