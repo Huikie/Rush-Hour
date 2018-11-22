@@ -38,7 +38,7 @@ class Breathfirst:
                     self.board_temp.move(car, -move)
                         #print(self.boards[self.counter].board)
             #for i in self.boards:
-                #print(i.board)
+                #print(i.board)  
 
             self.counter += 1
             #print(self.boards[self.counter].board)
