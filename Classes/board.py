@@ -35,7 +35,7 @@ class Board:
             self.cars.add(dict)
 
     def won(self):
-        if self.cars.cars["z"][1][1]  ==  7:
+        if self.cars.cars["z"][1][1]  ==  6:
             return True
         else:
             return False
