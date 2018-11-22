@@ -19,6 +19,8 @@ class Breathfirst:
                             self.boards.append(copy.deepcopy(self.board_temp))
                             self.archive.append(copy.deepcopy(self.board_temp.board))
                             print(self.board_temp.board)
+                            if self.board_temp.won() == True:
+                                return True
                     self.board_temp.move(car, -move)
                         #print(self.boards[self.counter].board)
             for move in range(1, 5):
@@ -29,6 +31,8 @@ class Breathfirst:
                             self.boards.append(copy.deepcopy(self.board_temp))
                             self.archive.append(copy.deepcopy(self.board_temp.board))
                             print(self.board_temp.board)
+                            if self.board_temp.won() == True:
+                                return True
                     self.board_temp.move(car, -move)
                         #print(self.boards[self.counter].board)
             #for i in self.boards:
@@ -36,10 +40,10 @@ class Breathfirst:
 
             self.counter += 1
             #print(self.boards[self.counter].board)
-            print(self.counter)
-            if self.board_temp.won() == True:
-                print(len(self.boards))
-                return True
+            #print(self.counter)
+            #if self.board_temp.won() == True:
+            #    print(len(self.boards))
+            #    return True
             if 1000 % self.counter == 0:
                 print(self.board_temp.board)
             if self.counter == 1000000:
