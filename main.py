@@ -10,9 +10,7 @@ def main():
 
 
     if algorithm.move() == True:
-        for board in algorithm.boards:
-            print(board.board)
-            if algorithm.board.won() == True:
+            if algorithm.board_temp.won() == True:
                 print("Won!")
                 return True
     #     board.load_board(file)
