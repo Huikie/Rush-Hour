@@ -38,7 +38,7 @@ class Breathfirst:
                     self.board_temp.move(car, -move)
                         #print(self.boards[self.counter].board)
             #for i in self.boards:
-                #print(i.board)  
+                #print(i.board)
 
             self.counter += 1
             #print(self.boards[self.counter].board)
@@ -46,8 +46,8 @@ class Breathfirst:
             #if self.board_temp.won() == True:
             #    print(len(self.boards))
             #    return True
-            if 1000 % self.counter == 0:
-                print(self.counter)
+            # if 1000 % self.counter == 0:
+            #     print(self.counter)
             if self.counter == 1000000:
                 return True
 
