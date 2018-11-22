@@ -35,7 +35,7 @@ class Board:
             self.cars.add(dict)
 
     def won(self):
-        if self.cars.cars["z"][1][1]  ==  7:
+        if self.cars.cars["z"][1][1]  ==  6:
             return True
         else:
             return False
@@ -46,7 +46,7 @@ class Board:
         self.board_temp = copy.deepcopy(self.board)
         self.car_temp = copy.deepcopy(self.cars.cars)
         # Move cars that are positioned horizontally
-        if self.cars.cars[car][0][0]== self.cars.cars[car][1][0]:
+        if self.cars.cars[car][0][0] == self.cars.cars[car][1][0]:
             # moves cars to the right
             if moves > 0:
                 # checks if move is valid
@@ -58,7 +58,7 @@ class Board:
                 for cordinate in self.cars.cars[car]:
                     self.board[cordinate[0]][cordinate[1]] = "."
                 for cordinate in self.cars.cars[car]:
-                    self.board[cordinate[0]][cordinate[1]+ moves] = car
+                    self.board[cordinate[0]][cordinate[1] + moves] = car
                 for cordinate in self.cars.cars[car]:
                     lijst.append([cordinate[0], cordinate[1] + moves])
                     self.cars.cars[car] = lijst
@@ -90,7 +90,7 @@ class Board:
                 for cordinate in self.cars.cars[car]:
                     self.board[cordinate[0]][cordinate[1]] = "."
                 for cordinate in self.cars.cars[car]:
-                    self.board[cordinate[0]+ moves][cordinate[1]] = car
+                    self.board[cordinate[0] + moves][cordinate[1]] = car
                 for cordinate in self.cars.cars[car]:
                     lijst.append([cordinate[0] + moves, cordinate[1]])
                     self.cars.cars[car] = lijst

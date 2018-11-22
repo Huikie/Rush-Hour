@@ -30,7 +30,10 @@ class Breathfirst:
             self.counter += 1
             #print(self.boards[self.counter].board)
             print(self.counter)
-            if self.counter == 2:
+            if self.board_temp.won() == True:
+                print(len(self.boards))
+                return True
+            if self.counter == 1000:
                 return True
 
 
