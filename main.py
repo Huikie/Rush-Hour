@@ -3,7 +3,7 @@ from Classes.board import Board
 def main():
     algorithm = Breathfirst()
     board = Board()
-    with open("Game_1.txt", "r") as file:
+    with open("Game_2.txt", "r") as file:
         algorithm.board.load_board(file)
         algorithm.boards.append(algorithm.board)
 

@@ -15,14 +15,16 @@ class Breathfirst:
                 for car in self.board.cars.cars.keys():
                     if self.board_temp.move(car, move) != False:
                         print(self.board_temp.board)
-                        self.boards.append(self.board_temp)
+                        self.boards.append(copy.deepcopy(self.board_temp))
+                        self.board_temp.move(car, -move)
                         #print(self.boards[self.counter].board)
             for move in range(1, 5):
                 self.board_temp = copy.deepcopy(self.boards[self.counter])
                 for car in self.board.cars.cars.keys():
                     if self.board_temp.move(car, move) != False:
                         print(self.board_temp.board)
-                        self.boards.append(self.board_temp)
+                        self.boards.append(copy.deepcopy(self.board_temp))
+                        self.board_temp.move(car, -move)
                         #print(self.boards[self.counter].board)
             #for i in self.boards:
                 #print(i.board)
