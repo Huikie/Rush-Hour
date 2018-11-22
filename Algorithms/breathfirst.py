@@ -17,8 +17,9 @@ class Breathfirst:
                     if self.board_temp.move(car, move) != False:
                         if self.board_temp.board not in self.archive:
                             self.boards.append(copy.deepcopy(self.board_temp))
+                            self.boards[len(self.boards)-1].parent = self.counter
                             self.archive.append(copy.deepcopy(self.board_temp.board))
-                            print(self.board_temp.board)
+                            #print(self.board_temp.board)
                             if self.board_temp.won() == True:
                                 return True
                     self.board_temp.move(car, -move)
@@ -29,8 +30,9 @@ class Breathfirst:
                     if self.board_temp.move(car, move) != False:
                         if self.board_temp.board not in self.archive:
                             self.boards.append(copy.deepcopy(self.board_temp))
+                            self.boards[len(self.boards)-1].parent = self.counter
                             self.archive.append(copy.deepcopy(self.board_temp.board))
-                            print(self.board_temp.board)
+                            #print(self.board_temp.board)
                             if self.board_temp.won() == True:
                                 return True
                     self.board_temp.move(car, -move)
@@ -45,7 +47,7 @@ class Breathfirst:
             #    print(len(self.boards))
             #    return True
             if 1000 % self.counter == 0:
-                print(self.board_temp.board)
+                print(self.counter)
             if self.counter == 1000000:
                 return True
 

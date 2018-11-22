@@ -15,6 +15,7 @@ class Board:
         self.cars = Cars()
         self.board_temp = []
         self.cars_temp = {}
+        self.parent = 0
     def load_board(self, file):
             board_text = file
             counter1 = 0
