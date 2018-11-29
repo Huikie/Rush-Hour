@@ -17,12 +17,12 @@ def main():
         print(len(algorithm.boards))
         #return True
         parent = len(algorithm.boards) -1
-        print(algorithm.boards[parent].board)
+        print(algorithm.boards[parent])
         counter = 0
         while parent != 0:
             counter += 1
             parent = algorithm.boards[parent].parent
-            print(algorithm.boards[parent].board)
+            print(algorithm.boards[parent])
         print(counter)
 
     #algorithm.board.move("d", -2)
