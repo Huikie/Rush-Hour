@@ -16,6 +16,11 @@ class Board:
         self.board_temp = []
         self.cars_temp = {}
         self.parent = 0
+
+    #Function that turns the board representation into a string
+    def __repr__(self):
+        return '\n'.join(' '.join(field) for field in self.board)
+
     def load_board(self, file):
             board_text = file
             counter1 = 0
