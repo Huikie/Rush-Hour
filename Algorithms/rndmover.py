@@ -14,14 +14,14 @@ class RandomAlgorithm:
             if self.board.won() == False:
                 move = random.randint(-5,5)
                 car_list = list(self.board.cars.cars.keys())
-                print(car_list)
-                car = random.shuffle(car_list[0])
-
-                print(car)
-                print(move)
-                #if self.board.move(car[0], move) == True:
-                #    print(self.board)
-                #    counter += 1
+                car_list_suffle = random.sample(car_list, len(car_list))
+                car = car_list_suffle[0]
+                #print (move)
+                #print(car)
+                if self.board.move(car[0], move) == True:
+                    print(self.board)
+                    counter += 1
             else:
+                print(counter)
                 return True
                 #if self.board.move(car, move) != False:
