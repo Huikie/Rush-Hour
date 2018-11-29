@@ -19,7 +19,7 @@ class Board:
 
     #Function that turns the board representation into a string
     def __repr__(self):
-        return '\n'.join(' '.join(field) for field in self.board)
+        return '\n' + '\n'.join(' '.join(field) for field in self.board)
 
     def load_board(self, file):
             board_text = file
