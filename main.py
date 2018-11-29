@@ -1,14 +1,13 @@
 from Algorithms.breathfirst import Breathfirst
 from Classes.board import Board
+from Algorithms.rndmover import RandomAlgorithm
 def main():
     algorithm = Breathfirst()
+    algorithm2 = RandomAlgorithm()
     board = Board()
-    with open("Game_3.txt", "r") as file:
+    with open("Game_1.txt", "r") as file:
         algorithm.board.load_board(file)
         algorithm.boards.append(algorithm.board)
-
-
-
 
     if algorithm.move() == True:
         print("harrie")
@@ -25,6 +24,9 @@ def main():
             parent = algorithm.boards[parent].parent
             print(algorithm.boards[parent].board)
         print(counter)
+
+    #algorithm.board.move("d", -2)
+    #print(algorithm.board.board)
 
 
     #     board.load_board(file)

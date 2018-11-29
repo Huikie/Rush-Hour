@@ -14,7 +14,7 @@ class Breathfirst:
             for move in range(-1, -5, -1):
                 self.board_temp = copy.deepcopy(self.boards[self.counter])
                 for car in self.board.cars.cars.keys():
-                    if self.board_temp.move(car, move) != False:
+                    if self.board_temp.move(car, move) == True:
                         if self.board_temp.board not in self.archive:
                             self.boards.append(copy.deepcopy(self.board_temp))
                             self.boards[len(self.boards)-1].parent = self.counter
@@ -22,12 +22,12 @@ class Breathfirst:
                             #print(self.board_temp.board)
                             if self.board_temp.won() == True:
                                 return True
-                    self.board_temp.move(car, -move)
-                        #print(self.boards[self.counter].board)
+                        self.board_temp.move(car, -move)
+                     #print(self.boards[self.counter].board)
             for move in range(1, 5):
                 self.board_temp = copy.deepcopy(self.boards[self.counter])
                 for car in self.board.cars.cars.keys():
-                    if self.board_temp.move(car, move) != False:
+                    if self.board_temp.move(car, move) == True:
                         if self.board_temp.board not in self.archive:
                             self.boards.append(copy.deepcopy(self.board_temp))
                             self.boards[len(self.boards)-1].parent = self.counter
@@ -35,10 +35,12 @@ class Breathfirst:
                             #print(self.board_temp.board)
                             if self.board_temp.won() == True:
                                 return True
-                    self.board_temp.move(car, -move)
+                        self.board_temp.move(car, -move)
                         #print(self.boards[self.counter].board)
             #for i in self.boards:
                 #print(i.board)
+            # for board in self.boards:
+            #     print(board.board)
 
             self.counter += 1
             #print(self.boards[self.counter].board)
