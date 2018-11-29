@@ -8,7 +8,7 @@ def main():
     with open("Game_1.txt", "r") as file:
         algorithm.board.load_board(file)
         algorithm.boards.append(algorithm.board)
-        
+
     if algorithm.move() == True:
         print("harrie")
 
@@ -24,6 +24,9 @@ def main():
             parent = algorithm.boards[parent].parent
             print(algorithm.boards[parent].board)
         print(counter)
+
+    #algorithm.board.move("d", -2)
+    #print(algorithm.board.board)
 
 
     #     board.load_board(file)
