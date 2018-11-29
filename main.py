@@ -1,7 +1,10 @@
 from Algorithms.breathfirst import Breathfirst
 from Classes.board import Board
 from Algorithms.rndmover import RandomAlgorithm
+import time
+
 def main():
+    start_time = time.time()
     algorithm = Breathfirst()
     algorithm2 = RandomAlgorithm()
     board = Board()
@@ -10,6 +13,8 @@ def main():
         # algorithm.boards.append(algorithm.board)
 
     if algorithm2.randMover() == True:
+        elapsed_time = time.time() - start_time
+        print("\nThe algorithm took", round(elapsed_time, 2), "seconds to solve the board!")
         print("won")
 
     # if algorithm.board_temp.won() == True:
@@ -23,7 +28,10 @@ def main():
     #         counter += 1
     #         parent = algorithm.boards[parent].parent
     #         print(algorithm.boards[parent])
-    #     print(counter)
+    #    elapsed_time = time.time() - start_time
+    #    print("\nPlease read the solution from bottom to top!")
+    #    print("\nThe algorithm took", round(elapsed_time, 2), "seconds to solve the board!")
+    #    print("Minimum amount of moves required to win the game:", counter)
 
     #algorithm.board.move("d", -2)
     #print(algorithm.board.board)
