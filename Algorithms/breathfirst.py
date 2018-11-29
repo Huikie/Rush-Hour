@@ -19,12 +19,12 @@ class Breathfirst:
                 for car in self.board.cars.cars.keys():
                     if self.board_temp.move(car, move) != False:
                         if self.board_temp.board not in self.archive:
-                            self.board_temp.parent = counter
                             self.boards.append(copy.deepcopy(self.board_temp))
+                            self.boards[len(self.boards)-1].parent = counter
                             self.archive.append(copy.deepcopy(self.board_temp.board))
-                            print(len(self.boards))
-                            print(self.board_temp.parent)
-                            print(self.board_temp.board)
+                            #print(len(self.boards))
+                            #print(self.board_temp.parent)
+                            #print(self.board_temp.board)
                             if self.board_temp.won() == True:
                                 return True
                     self.board_temp.move(car, -move)
@@ -34,12 +34,12 @@ class Breathfirst:
                 for car in self.board.cars.cars.keys():
                     if self.board_temp.move(car, move) != False:
                         if self.board_temp.board not in self.archive:
-                            self.board_temp.parent = counter
                             self.boards.append(copy.deepcopy(self.board_temp))
+                            self.boards[len(self.boards)-1].parent = counter
                             self.archive.append(copy.deepcopy(self.board_temp.board))
-                            print(len(self.boards))
-                            print(self.board_temp.parent)
-                            print(self.board_temp.board)
+                            #print(len(self.boards))
+                            #print(self.board_temp.parent)
+                            #print(self.board_temp.board)
                             if self.board_temp.won() == True:
                                 return True
                     self.board_temp.move(car, -move)
