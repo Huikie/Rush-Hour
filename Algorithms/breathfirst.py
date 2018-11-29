@@ -8,6 +8,9 @@ class Breathfirst:
         self.cars = []
         self.counter = 0
         self.archive =[]
+
+    def __str__():
+        
     def move(self):
         for j in self.boards:
             #print(j.board)
