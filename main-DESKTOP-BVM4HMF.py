@@ -8,7 +8,7 @@ def main():
     algorithm = Breathfirst()
     algorithm2 = RandomAlgorithm()
     board = Board()
-    with open("Game_4.txt", "r") as file:
+    with open("Won_board.txt", "r") as file:
         algorithm.board.load_board(file)
         algorithm.boards.append(algorithm.board)
 
@@ -30,6 +30,10 @@ def main():
         print("\nPlease read the solution from bottom to top!")
         print("\nThe algorithm took", round(elapsed_time, 2), "seconds to solve the board!")
         print("Minimum amount of moves required to win the game:", counter)
+
+
+# your code
+
 
     #algorithm.board.move("d", -2)
     #print(algorithm.board.board)
