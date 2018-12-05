@@ -11,7 +11,7 @@ class Breathfirst:
     def move(self):
         for j in self.boards:
             #print(j.board)
-            for move in range(-1, -8, -1):
+            for move in range(-1, -5, -1):
                 self.board_temp = copy.deepcopy(self.boards[self.counter])
                 for car in self.board.cars.cars.keys():
                     if self.board_temp.move(car, move) == True:
@@ -24,7 +24,7 @@ class Breathfirst:
                                 return True
                         self.board_temp.move(car, -move)
                      #print(self.boards[self.counter].board)
-            for move in range(1, 8):
+            for move in range(1, 5):
                 self.board_temp = copy.deepcopy(self.boards[self.counter])
                 for car in self.board.cars.cars.keys():
                     if self.board_temp.move(car, move) == True:
