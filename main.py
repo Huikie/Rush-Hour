@@ -8,10 +8,10 @@ def main():
     algorithm = Breathfirst()
     algorithm2 = RandomAlgorithm()
     board = Board()
-    with open("Game_4.txt", "r") as file:
+    with open("Game_3.txt", "r") as file:
         algorithm2.board.load_board(file)
         #algorithm.boards.append(algorithm.board)
-    algorithm2.branchboundSolver()
+    algorithm2.branchboundSolver(10000)
 
     # if algorithm.move() == True:
     #     print("harrie")
