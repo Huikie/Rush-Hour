@@ -9,27 +9,28 @@ def main():
     algorithm2 = RandomAlgorithm()
     board = Board()
     with open("Game_4.txt", "r") as file:
-        algorithm.board.load_board(file)
-        algorithm.boards.append(algorithm.board)
+        algorithm2.board.load_board(file)
+        #algorithm.boards.append(algorithm.board)
+    algorithm2.branchboundSolver()
 
-    if algorithm.move() == True:
-        print("harrie")
-
-    if algorithm.board_temp.won() == True:
-        print("Won!")
-        print(len(algorithm.boards))
-        #return True
-        parent = len(algorithm.boards) -1
-        print(algorithm.boards[parent])
-        counter = 0
-        while parent != 0:
-            counter += 1
-            parent = algorithm.boards[parent].parent
-            print(algorithm.boards[parent])
-        elapsed_time = time.time() - start_time
-        print("\nPlease read the solution from bottom to top!")
-        print("\nThe algorithm took", round(elapsed_time, 2), "seconds to solve the board!")
-        print("Minimum amount of moves required to win the game:", counter)
+    # if algorithm.move() == True:
+    #     print("harrie")
+    #
+    # if algorithm.board_temp.won() == True:
+    #     print("Won!")
+    #     print(len(algorithm.boards))
+    #     #return True
+    #     parent = len(algorithm.boards) -1
+    #     print(algorithm.boards[parent])
+    #     counter = 0
+    #     while parent != 0:
+    #         counter += 1
+    #         parent = algorithm.boards[parent].parent
+    #         print(algorithm.boards[parent])
+    #     elapsed_time = time.time() - start_time
+    #     print("\nPlease read the solution from bottom to top!")
+    #     print("\nThe algorithm took", round(elapsed_time, 2), "seconds to solve the board!")
+    #     print("Minimum amount of moves required to win the game:", counter)
 
     #algorithm.board.move("d", -2)
     #print(algorithm.board.board)
