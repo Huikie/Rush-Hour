@@ -13,14 +13,14 @@ class Breathfirst:
             #print(j.board)
             for move in range(-5, 5):
                 self.board_temp = copy.deepcopy(self.boards[self.counter])
-                if self.board_temp.move("z", move) == True:
-                    if str([self.board_temp.board]) not in self.archive:
-                        self.boards.append(copy.deepcopy(self.board_temp))
-                        self.boards[len(self.boards)-1].parent = self.counter
-                        self.archive[str([self.board_temp.board])]=True
-                        if self.board_temp.won() == True:
-                            return True
-                    self.board_temp.move("z", -move)                        
+                # if self.board_temp.move("z", move) == True:
+                #     if str([self.board_temp.board]) not in self.archive:
+                #         self.boards.append(copy.deepcopy(self.board_temp))
+                #         self.boards[len(self.boards)-1].parent = self.counter
+                #         self.archive[str([self.board_temp.board])]=True
+                #         if self.board_temp.won() == True:
+                #             return True
+                #     self.board_temp.move("z", -move)
                 for car in self.board.cars.cars.keys():
                     if self.board_temp.move(car, move) == True:
                         if str([self.board_temp.board]) not in self.archive:
