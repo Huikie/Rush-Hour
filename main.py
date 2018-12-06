@@ -20,7 +20,7 @@ def main():
         print("Won!")
         print(len(algorithm.boards))
         #return True
-        parent = algorithm.archive[str([algorithm.board_temp.board])]
+        parent = algorithm.archive[str([self.board_temp.board])]
         print(algorithm.archive[parent])
         counter = 0
         while parent != 0:
