@@ -44,7 +44,7 @@ class RandomAlgorithm:
             if self.board_temp.won() == False:
                 move = random.randint(-5,5)
                 car_list = list(self.board_temp.cars.cars.keys())
-                car_list_suffle = random.sample(car_list, len(car_list))
+                car_list_suffle = random.sample(car_list, 1)
                 car = car_list_suffle[0]
                 #print (move)
                 #print(car)
