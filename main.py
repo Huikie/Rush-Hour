@@ -16,6 +16,7 @@ def main():
     algorithm.move()
         #print("harrie")
     print(len(algorithm.boards))
+    print(algorithm.counter_move)
     if algorithm.board_temp.won() == True:
         print("Won!")
         print(len(algorithm.boards))

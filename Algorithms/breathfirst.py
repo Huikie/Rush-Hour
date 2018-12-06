@@ -7,11 +7,13 @@ class Breathfirst:
         self.boards = []
         self.cars = []
         self.counter = 0
+        self.counter_move = 0
         self.archive = {}
     def move(self):
         for j in self.boards:
             #print(j.board)
             for move in range(-5, 5):
+                self.counter_moves =+ 1
                 self.board_temp = copy.deepcopy(self.boards[self.counter])
                 self.board_temp2 = copy.deepcopy(self.boards[self.counter])
                 # if self.board_temp.move("z", move) == True:
@@ -29,8 +31,8 @@ class Breathfirst:
                             self.boards[len(self.boards)-1].parent = self.counter
                             self.archive[str([self.board_temp.board])] = self.board_temp2
                             #print(self.board_temp.board)
-                            #if self.board_temp.won() == True:
-                                #return True
+                            if self.board_temp.won() == True:
+                                return True
                         self.board_temp.move(car, -move)
                      #print(self.boards[self.counter].board)
                         #print(self.boards[self.counter].board)
