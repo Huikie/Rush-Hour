@@ -20,7 +20,7 @@ class Breathfirst:
                         self.archive[str([self.board_temp.board])]=True
                         if self.board_temp.won() == True:
                             return True
-                    self.board_temp.move(car, -move)                        
+                    self.board_temp.move("z", -move)                        
                 for car in self.board.cars.cars.keys():
                     if self.board_temp.move(car, move) == True:
                         if str([self.board_temp.board]) not in self.archive:
