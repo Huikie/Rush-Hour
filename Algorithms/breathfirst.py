@@ -27,7 +27,7 @@ class Breathfirst:
                         if str([self.board_temp.board]) not in self.archive:
                             self.boards.append(copy.deepcopy(self.board_temp))
                             self.boards[len(self.boards)-1].parent = self.counter
-                            self.archive[str([self.board_temp.board])] = str([self.board_temp2.board])
+                            self.archive[str([self.board_temp.board])] = self.board_temp2
                             #print(self.board_temp.board)
                             if self.board_temp.won() == True:
                                 return True
