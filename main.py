@@ -23,7 +23,7 @@ def main():
         parent = algorithm.archive[str([algorithm.board_temp.board])]
         print(algorithm.archive[parent])
         counter = 0
-        while algorithm.archive[parent] != str(algorithm.board):
+        while parent != 0:
             counter += 1
             parent = algorithm.archive[parent]
             print(algorithm.archive[parent])
