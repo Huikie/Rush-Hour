@@ -8,7 +8,7 @@ def main():
     algorithm = Breathfirst()
     algorithm2 = RandomAlgorithm()
     board = Board()
-    with open("Game_1.txt", "r") as file:
+    with open("Game_2.txt", "r") as file:
         algorithm.board.load_board(file)
         algorithm.boards.append(algorithm.board)
     #algorithm2.branchboundSolver(10000)
@@ -20,13 +20,13 @@ def main():
         print("Won!")
         print(len(algorithm.boards))
         #return True
-        parent = algorithm.archive[algorithm.board_temp]
-        print(algorithm.archive[parent])
+        parent = len(algorithm.boards) - 1
+        print(algorithm.boards[parent])
         counter = 0
         while parent != 0:
             counter += 1
-            parent = algorithm.archive[parent]
-            print(algorithm.archive[parent])
+            parent = algorithm.boards[parent].parent
+            print(algorithm.boards[parent])
         elapsed_time = time.time() - start_time
         print("\nPlease read the solution from bottom to top!")
         print("\nThe algorithm took", round(elapsed_time, 2), "seconds to solve the board!")
