@@ -21,6 +21,7 @@ Game_1:
 
 > Min formule: 1 + 1 = 2
 > Max formule: 5^6 * 4^3 = 10^6 (1000000)
+> Doorgerekende statespace met statespace functie: 11253
 
 Game_2:
 
@@ -29,6 +30,7 @@ Game_2:
 
 > Min formule: 1 + 2 = 3
 > Max formule: 5^12 * 4^1 = 976562500
+> Doorgerekende statespace met statespace functie: 13842
 
 - 6 2(zelfde rij) vlaksauto's(3 zetten)
 - 1 3 vlaksauto(4 zetten)
@@ -43,6 +45,7 @@ Game_3:
 
 > Min formule: 1 + 3 = 4
 > Max formule: 5^12 * 4^1 = 976562500
+> Doorgerekende statespace met statespace functie: 819
 
 - 1 2/3(zelfde rij) vlaksauto (2 zetten)
 - 1 3/2 (zelfde rij) vlaksauto (2 zetten)
