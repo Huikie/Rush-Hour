@@ -29,8 +29,8 @@ class Breathfirst:
                             self.boards[len(self.boards)-1].parent = self.counter
                             self.archive[str([self.board_temp.board])] = self.board_temp2
                             #print(self.board_temp.board)
-                            if self.board_temp.won() == True:
-                                return True
+                            #if self.board_temp.won() == True:
+                                #return True
                         self.board_temp.move(car, -move)
                      #print(self.boards[self.counter].board)
                         #print(self.boards[self.counter].board)
