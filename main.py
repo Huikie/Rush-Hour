@@ -20,13 +20,13 @@ def main():
         print("Won!")
         print(len(algorithm.boards))
         #return True
-        parent = len(algorithm.boards) -1
-        print(algorithm.boards[parent])
+        parent = algorithm.archive[algorithm.board_temp]
+        print(algorithm.archive[parent])
         counter = 0
         while parent != 0:
             counter += 1
-            parent = algorithm.boards[parent].parent
-            print(algorithm.boards[parent])
+            parent = algorithm.archive[parent]
+            print(algorithm.archive[parent])
         elapsed_time = time.time() - start_time
         print("\nPlease read the solution from bottom to top!")
         print("\nThe algorithm took", round(elapsed_time, 2), "seconds to solve the board!")

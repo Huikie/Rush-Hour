@@ -13,6 +13,7 @@ class Breathfirst:
             #print(j.board)
             for move in range(-5, 5):
                 self.board_temp = copy.deepcopy(self.boards[self.counter])
+                self.board_temp2 = copy.deepcopy(self.boards[self.counter])
                 # if self.board_temp.move("z", move) == True:
                 #     if str([self.board_temp.board]) not in self.archive:
                 #         self.boards.append(copy.deepcopy(self.board_temp))
@@ -26,7 +27,7 @@ class Breathfirst:
                         if str([self.board_temp.board]) not in self.archive:
                             self.boards.append(copy.deepcopy(self.board_temp))
                             self.boards[len(self.boards)-1].parent = self.counter
-                            self.archive[str([self.board_temp.board])]=True
+                            self.archive[str([self.board_temp.board])] = self.board_temp2
                             #print(self.board_temp.board)
                             if self.board_temp.won() == True:
                                 return True
