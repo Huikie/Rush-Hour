@@ -33,6 +33,7 @@ class RandomAlgorithm:
             else:
                 self.iterationCount += 1
         elapsed_time = time.time() - start_time
+        print("Board_1")
         print("Best result found after", self.iterationCount," iterations: ", self.newbest)
         print("The algorithm took", round(elapsed_time, 2), "to complete", self.iterationCount, "iterations!\n")
         return True
