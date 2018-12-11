@@ -11,19 +11,13 @@ class RandomAlgorithm:
         self.cars = []
 
     def branchboundSolver(self, iterations):
-        start_time = time.time()
         self.iterationCount = 0
         self.newbest = 0
         while self.iterationCount != iterations:
             new_score = self.randMover()
-            print("Iteration counter: ", self.iterationCount)
-            print("Best score: ", self.newbest)
-            if new_score == self.newbest:
-                print("No faster solution found!")
-                print("")
-            else:
-                print("Score of this iteration: ", new_score)
-                print("")
+            print("Iteration counter: ", self.iterationCount + 1)
+            if new_score != self.newbest:
+                print("Better solution has been found: ", new_score)
             if self.iterationCount == 0:
                 self.newbest = new_score
                 self.iterationCount += 1
@@ -32,10 +26,7 @@ class RandomAlgorithm:
                 self.iterationCount += 1
             else:
                 self.iterationCount += 1
-        elapsed_time = time.time() - start_time
-        print("Best result found after", self.iterationCount," iterations: ", self.newbest)
-        print("The algorithm took", round(elapsed_time, 2), "to complete", self.iterationCount, "iterations!\n")
-        return True
+        self.won_info()
 
     def randMover(self):
         counter = 0
@@ -46,14 +37,17 @@ class RandomAlgorithm:
                 car_list = list(self.board_temp.cars.cars.keys())
                 car_list_suffle = random.sample(car_list, 1)
                 car = car_list_suffle[0]
-                #print (move)
-                #print(car)
                 if self.board_temp.move(car[0], move) == True:
-                    #print(self.board)
                     counter += 1
                     if self.iterationCount != 0 and counter == self.newbest:
                         return counter
             else:
                 return counter
-                #return True
-                #if self.board.move(car, move) != False:
+
+    def won_info(self):
+        start_time = time.time()
+        elapsed_time = time.time() - start_time
+        print("")
+        print("Best result found after", self.iterationCount," iterations: ", self.newbest)
+        print("The algorithm took", round(elapsed_time, 2), "to complete", self.iterationCount, "iterations!\n")
+        return True
