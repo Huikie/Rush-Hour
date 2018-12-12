@@ -10,11 +10,11 @@ class RandomAlgorithm:
         self.boards = []
         self.cars = []
 
-    def branchboundSolver(self, iterations):
+    def branchBound(self, iterations, size):
         self.iterationCount = 0
         self.newbest = 0
         while self.iterationCount != iterations:
-            new_score = self.randMover()
+            new_score = self.randMover(size)
             print("Iteration counter: ", self.iterationCount + 1)
             if new_score != self.newbest:
                 print("Better solution has been found: ", new_score)
@@ -28,12 +28,12 @@ class RandomAlgorithm:
                 self.iterationCount += 1
         self.won_info()
 
-    def randMover(self):
+    def randMover(self, size):
         counter = 0
         self.board_temp = copy.deepcopy(self.board)
         while counter != 1000000:
-            if self.board_temp.won() == False:
-                move = random.randint(-5,5)
+            if self.board_temp.won(size) == False:
+                move = random.randint(-(size - 1), (size - 1))
                 car_list = list(self.board_temp.cars.cars.keys())
                 car_list_suffle = random.sample(car_list, 1)
                 car = car_list_suffle[0]
