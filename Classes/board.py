@@ -57,7 +57,7 @@ class Board:
             ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
             ]
         else:
-            print("Error selecting an appropriate board size. Supported sizes are: 6x6, 9x9 and 12x12.")
+            print("Error inppropriate board size. Supported sizes are: 6x6, 9x9 and 12x12.")
             return False
 
 
