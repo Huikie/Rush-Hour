@@ -55,22 +55,31 @@ class Breathfirst:
 
     def won_info(self):
         counter = 0
-        print(str([self.board_temp.board]))
+        print(type(str([self.board_temp.board])))
         counter += 1
-        print(self.archive[str([self.board_temp.board])])
+        self.makeup(self.archive[str([self.board_temp.board])])
         # selects parent and prints it
         counter += 1
         parent = self.archive[str([self.board_temp.board])]
-        print(self.archive[parent])
+        self.makeup(self.archive[parent])
 
         # prints parent board until the first board is reached
         while self.archive[parent] != str([self.first_board]):
             counter += 1
             parent = self.archive[parent]
-            print(self.archive[parent])
+            self.makeup(self.archive[parent])
         elapsed_time = time.time() - self.start_time
 
         # prints extra info
         print("\nPlease read the solution from bottom to top!")
         print("\nThe algorithm took", round(elapsed_time, 2), "seconds to solve the board!")
         print("Minimum amount of moves required to win the game:", counter)
+
+    def makeup(self, board):
+        board = board.replace("[","")
+        board = board.replace(",","")
+        board = board.replace("'","")
+        board = board.replace("]","\n")
+        board = " " + board
+        
+        print(board)
