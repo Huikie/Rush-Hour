@@ -1,6 +1,8 @@
 from Classes.board import Board
 import copy as copy
 import time
+import queue
+
 class Breathfirst:
     def __init__(self):
         self.breathfirst = []
@@ -10,22 +12,26 @@ class Breathfirst:
         self.counter = 0
         self.counter_move = 0
         self.archive = {}
+        self.queue = queue.Queue()
 
     def breadthFirst(self, size):
         self.start_time = time.time()
-
+        self.first_board = copy.deepcopy(self.board.board)
+        self.queue.put(self.board)
+        #print("test")
         # iterates over all the boards
-        for j in self.boards:
-
+        while not self.queue.empty():
+            board = self.queue.get()
             # selects each move
             for move in range(-(size - 1), (size - 1)):
+                #print("test2")
 
                 # makes deepcopy of board for move
-                self.board_temp = copy.deepcopy(self.boards[self.counter])
-                self.board_temp2 = copy.deepcopy(self.boards[self.counter])
+                self.board_temp = copy.deepcopy(board)
+                self.board_temp2 = copy.deepcopy(board)
 
                 # select each car
-                for car in self.keys():
+                for car in self.board.cars.keys():
 
                     # checks if move is possible
                     if self.board_temp.move(car, move) == True:
@@ -35,9 +41,8 @@ class Breathfirst:
                         if str([self.board_temp.board]) not in self.archive:
 
                             # saves board
-                            self.boards.append(copy.deepcopy(self.board_temp))
-                            self.boards[len(self.boards)-1].parent = self.counter
-                            self.archive[str([self.board_temp.board])] = self.board_temp2
+                            self.queue.put(copy.deepcopy(self.board_temp))
+                            self.archive[str([self.board_temp.board])] = str([self.board_temp2.board])
 
                             # checks if won
                             if self.board_temp.won(size) == True:
@@ -49,17 +54,20 @@ class Breathfirst:
             self.counter += 1
 
     def won_info(self):
-
-        # selects parent and prints it
-        parent = len(self.boards) - 1
-        print(self.boards[parent])
         counter = 0
+        print(self.board_temp.board)
+        counter += 1
+        print(self.archive[str([self.board_temp.board])])
+        # selects parent and prints it
+        counter += 1
+        parent = self.archive[str([self.board_temp.board])]
+        print(self.archive[parent])
 
         # prints parent board until the first board is reached
-        while parent != 0:
+        while self.archive[parent] != str([self.first_board]):
             counter += 1
-            parent = self.boards[parent].parent
-            print(self.boards[parent])
+            parent = self.archive[parent]
+            print(self.archive[parent])
         elapsed_time = time.time() - self.start_time
 
         # prints extra info
