@@ -18,16 +18,14 @@ def main():
                     i += 1
             if sys.argv[2] == "random":
                 algorithm2.board.load_board(file, i)
+                algorithm2.branchBound(100, i)
             elif sys.argv[2] == "breathfirst":
                 algorithm.board.load_board(file, i)
+                algorithm.boards.append(algorithm.board)
+                algorithm.breadthFirst(i)
             else:
                 print("invalid algorithm")
 
-        if sys.argv[2] == "random":
-            algorithm2.branchBound(100, i)
-        if sys.argv[2] == "breathfirst":
-            algorithm.boards.append(algorithm.board)
-            algorithm.breadthFirst(i)
 
 
 

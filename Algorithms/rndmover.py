@@ -11,8 +11,12 @@ class RandomAlgorithm:
         self.cars = []
 
     def branchBound(self, iterations, size):
+
+        # makes variables
+        self.start_time = time.time()
         self.iterationCount = 0
         self.newbest = 0
+
         while self.iterationCount != iterations:
             new_score = self.randMover(size)
             print("Iteration counter: ", self.iterationCount + 1)
@@ -45,8 +49,7 @@ class RandomAlgorithm:
                 return counter
 
     def won_info(self):
-        start_time = time.time()
-        elapsed_time = time.time() - start_time
+        elapsed_time = time.time() - self.start_time
         print("")
         print("Best result found after", self.iterationCount," iterations: ", self.newbest)
         print("The algorithm took", round(elapsed_time, 2), "to complete", self.iterationCount, "iterations!\n")
