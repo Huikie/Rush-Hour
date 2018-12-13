@@ -9,7 +9,7 @@ class Breathfirst:
         self.cars = []
         self.counter = 0
         self.counter_move = 0
-        self.archive = {}
+        self.archive = {} 
 
     def breadthFirst(self, size):
         self.start_time = time.time()
@@ -25,7 +25,7 @@ class Breathfirst:
                 self.board_temp2 = copy.deepcopy(self.boards[self.counter])
 
                 # select each car
-                for car in self.keys():
+                for car in self.board.cars.cars.keys():
 
                     # checks if move is possible
                     if self.board_temp.move(car, move) == True:
