@@ -38,7 +38,7 @@ class RandomAlgorithm:
         while counter != 1000000:
             if self.board_temp.won(size) == False:
                 move = random.randint(-(size - 1), (size - 1))
-                car_list = list(self.board_temp.cars.cars.keys())
+                car_list = list(self.board_temp.cars.keys())
                 car_list_suffle = random.sample(car_list, 1)
                 car = car_list_suffle[0]
                 if self.board_temp.move(car[0], move) == True:
