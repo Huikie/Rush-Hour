@@ -55,7 +55,7 @@ class Breathfirst:
 
     def won_info(self):
         counter = 0
-        print(self.board_temp.board)
+        print(str([self.board_temp.board]))
         counter += 1
         print(self.archive[str([self.board_temp.board])])
         # selects parent and prints it
