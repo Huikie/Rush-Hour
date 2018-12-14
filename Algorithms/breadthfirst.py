@@ -3,7 +3,7 @@ import copy as copy
 import time
 import queue
 
-class Breathfirst:
+class Breadthfirst:
     def __init__(self):
         self.breathfirst = []
         self.board = Board()
@@ -81,5 +81,5 @@ class Breathfirst:
         board = board.replace("'","")
         board = board.replace("]","\n")
         board = " " + board
-        
+
         print(board)

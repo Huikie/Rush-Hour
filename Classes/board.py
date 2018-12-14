@@ -93,7 +93,7 @@ class Board:
             return False
 
     def add(self, cars_dict):
-        """Function that sets the cars dictionary equal to a dictionary has been created (cars_dict)"""
+        """Function that sets the cars dictionary equal to a dictionary (cars_dict)"""
         self.cars = cars_dict
 
     def move(self, car, moves):
