@@ -60,11 +60,13 @@ class Board:
         # Select a board based on the length of the board in the file
         self.select_board(num)
         board_text = file
+
         # Row coordinate of the cars
         y = 0
         dict = {}
         print(board_text)
         for row in board_text:
+
             # Column coordinate of the cars
             x = 0
             y += 1
@@ -92,6 +94,7 @@ class Board:
         self.cars = cars_dict
 
     def move_horizontally(self, moves, car, coordinate):
+
         # Move is valid, so move the car, update the board and change the coordinates of the moved car
         for coordinate in self.cars[car]:
             self.board[coordinate[0]][coordinate[1]] = "."
@@ -102,6 +105,7 @@ class Board:
             self.cars[car] = self.car_coordinates
 
     def move_vertically(self, moves, car, coordinate):
+
         # Move is valid, so move the car, update the board and change the coordinates of the moved car
         for coordinate in self.cars[car]:
             self.board[coordinate[0]][coordinate[1]] = "."
@@ -120,14 +124,18 @@ class Board:
 
         # Move cars are positioned horizontally
         if self.cars[car][0][0] == self.cars[car][1][0]:
+
             # Move car to the right
             if moves > 0:
+
                 # Check if move is valid
                 for move in range(1, moves + 1):
                     for coordinate in self.cars[car]:
                         if self.board[coordinate[0]][coordinate[1] + move] != "." and self.board[coordinate[0]][coordinate[1] + move] != car :
+
                             # Move is invalid
                             return False
+                            
                 # Moves car horizontally
                 self.move_horizontally(moves, car, coordinate)
                 return True
