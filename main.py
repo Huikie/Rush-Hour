@@ -9,14 +9,22 @@ def main():
     algorithm2 = RandomBound()
     board = Board()
     i = 0
+
+    # Checks if file board file exists
     if os.path.exists(sys.argv[1]):
         with open(sys.argv[1], "r") as file:
+
+            # Gives the correct board size
             for i, l in enumerate(file):
                 i += 1
             file.seek(0)
+
+            # Starts Random bound algorithm
             if sys.argv[2] == "random":
                 algorithm2.board.load_board(file, i)
                 algorithm2.randomBound(100, i)
+
+            # Starts breadthfirst algorithm
             elif sys.argv[2] == "breadthfirst":
                 algorithm.board.load_board(file, i)
                 algorithm.boards.append(algorithm.board)

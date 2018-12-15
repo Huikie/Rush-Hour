@@ -4,11 +4,6 @@ class Board:
         self.board = []
         self.cars = {}
         self.board_temp = []
-        self.parent = 0
-
-    def __repr__(self):
-        """Function that turns the board representation into a string."""
-        return '\n' + '\n'.join(' '.join(field) for field in self.board)
 
     def select_board(self, size):
         """Function that selects an appropriate board representation based on size."""
@@ -96,12 +91,33 @@ class Board:
         """Function that sets the cars dictionary equal to a dictionary (cars_dict)"""
         self.cars = cars_dict
 
+    def move_horizontally(self, moves, car, coordinate):
+        # Move is valid, so move the car, update the board and change the coordinates of the moved car
+        for coordinate in self.cars[car]:
+            self.board[coordinate[0]][coordinate[1]] = "."
+        for coordinate in self.cars[car]:
+            self.board[coordinate[0]][coordinate[1] + moves] = car
+        for coordinate in self.cars[car]:
+            self.car_coordinates.append([coordinate[0], coordinate[1] + moves])
+            self.cars[car] = self.car_coordinates
+
+    def move_vertically(self, moves, car, coordinate):
+        # Move is valid, so move the car, update the board and change the coordinates of the moved car
+        for coordinate in self.cars[car]:
+            self.board[coordinate[0]][coordinate[1]] = "."
+        for coordinate in self.cars[car]:
+            self.board[coordinate[0]+ moves][coordinate[1]] = car
+        for coordinate in self.cars[car]:
+            self.car_coordinates.append([coordinate[0] + moves, coordinate[1]])
+            self.cars[car] = self.car_coordinates
+
     def move(self, car, moves):
         """This function makes it possible to move a car (car parameter) in a
         Rush Hour board with a certain amount of moves (moves parameter)."""
 
         # List that holds coordinates of all cars (keys) in the board as a value in the cars dictionary
-        car_coordinates = []
+        self.car_coordinates = []
+
         # Move cars are positioned horizontally
         if self.cars[car][0][0] == self.cars[car][1][0]:
             # Move car to the right
@@ -112,68 +128,54 @@ class Board:
                         if self.board[coordinate[0]][coordinate[1] + move] != "." and self.board[coordinate[0]][coordinate[1] + move] != car :
                             # Move is invalid
                             return False
-                # Move is valid, so move the car, update the board and change the coordinates of the moved car
-                for coordinate in self.cars[car]:
-                    self.board[coordinate[0]][coordinate[1]] = "."
-                for coordinate in self.cars[car]:
-                    self.board[coordinate[0]][coordinate[1] + moves] = car
-                for coordinate in self.cars[car]:
-                    car_coordinates.append([coordinate[0], coordinate[1] + moves])
-                    self.cars[car] = car_coordinates
+                # Moves car horizontally
+                self.move_horizontally(moves, car, coordinate)
                 return True
 
             # Move car to the left
             elif moves < 0:
+
                 # Check if move is valid
                 for move in range(-1, moves -1, -1):
                     for coordinate in self.cars[car]:
                         if self.board[coordinate[0]][coordinate[1] + move] != "." and self.board[coordinate[0]][coordinate[1] + move] != car :
+
                             # Move is invalid
                             return False
-                # Move is valid, so move the car, update the board and change the coordinates of the moved car
-                for coordinate in self.cars[car]:
-                    self.board[coordinate[0]][coordinate[1]] = "."
-                for coordinate in self.cars[car]:
-                    self.board[coordinate[0]][coordinate[1] + moves] = car
-                for coordinate in self.cars[car]:
-                    car_coordinates.append([coordinate[0], coordinate[1] + moves])
-                    self.cars[car] = car_coordinates
+
+                # Moves car horizontally
+                self.move_horizontally(moves, car, coordinate)
                 return True
 
-        # Move cars that are positioned vertically
+        # Moves cars that are positioned vertically
         else:
+
             # Move car down
             if moves > 0:
+
                 # Check if move is valid
                 for move in range(1, moves + 1):
                     for coordinate in self.cars[car]:
                         if self.board[coordinate[0] + move][coordinate[1]] != "." and self.board[coordinate[0] + move][coordinate[1]] != car :
+
                             # Move is invalid
                             return False
-                # Move is valid, so move the car, update the board and change the coordinates of the moved car
-                for coordinate in self.cars[car]:
-                    self.board[coordinate[0]][coordinate[1]] = "."
-                for coordinate in self.cars[car]:
-                    self.board[coordinate[0]+ moves][coordinate[1]] = car
-                for coordinate in self.cars[car]:
-                    car_coordinates.append([coordinate[0] + moves, coordinate[1]])
-                    self.cars[car] = car_coordinates
+
+                # Moves car vertically
+                self.move_vertically(moves, car, coordinate)
                 return True
 
             # Move cars up
             elif moves < 0:
+
                 # Check if move is valid
                 for move in range(-1, moves -1, -1):
                     for coordinate in self.cars[car]:
                         if self.board[coordinate[0] + move][coordinate[1]] != "." and self.board[coordinate[0] + move][coordinate[1]] != car :
+
                             # Move is invalid
                             return False
-                # Move is valid, so move the car, update the board and change the coordinates of the moved car
-                for coordinate in self.cars[car]:
-                    self.board[coordinate[0]][coordinate[1]] = "."
-                for coordinate in self.cars[car]:
-                    self.board[coordinate[0]+ moves][coordinate[1]] = car
-                for coordinate in self.cars[car]:
-                    car_coordinates.append([coordinate[0] + moves, coordinate[1]])
-                    self.cars[car] = car_coordinates
+
+                # Moves car vertically
+                self.move_vertically(moves, car, coordinate)
                 return True
