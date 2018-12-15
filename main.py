@@ -1,12 +1,12 @@
 from Algorithms.breadthfirst import Breadthfirst
 from Classes.board import Board
-from Algorithms.rndmover import RandomAlgorithm
+from Algorithms.randomBound import RandomBound
 import sys
 import os.path
 
 def main():
     algorithm = Breadthfirst()
-    algorithm2 = RandomAlgorithm()
+    algorithm2 = RandomBound()
     board = Board()
     i = 0
     if os.path.exists(sys.argv[1]):
@@ -16,7 +16,7 @@ def main():
             file.seek(0)
             if sys.argv[2] == "random":
                 algorithm2.board.load_board(file, i)
-                algorithm2.branchBound(100, i)
+                algorithm2.randomBound(100, i)
             elif sys.argv[2] == "breadthfirst":
                 algorithm.board.load_board(file, i)
                 algorithm.boards.append(algorithm.board)
