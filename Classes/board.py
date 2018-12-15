@@ -135,7 +135,7 @@ class Board:
 
                             # Move is invalid
                             return False
-                            
+
                 # Moves car horizontally
                 self.move_horizontally(moves, car, coordinate)
                 return True
@@ -171,7 +171,7 @@ class Board:
 
                 # Moves car vertically
                 self.move_vertically(moves, car, coordinate)
-                return True
+                return True 
 
             # Move cars up
             elif moves < 0:
