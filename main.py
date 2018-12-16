@@ -5,8 +5,8 @@ import sys
 import os.path
 
 def main():
-    algorithm = Breadthfirst()
-    algorithm2 = RandomBound()
+    algorithmBF = Breadthfirst()
+    algorithmRB = RandomBound()
     board = Board()
     i = 0
 
@@ -21,14 +21,14 @@ def main():
 
             # Starts Random bound algorithm
             if sys.argv[2] == "randombound":
-                algorithm2.board.load_board(file, i)
-                algorithm2.randomBound(100, i)
+                algorithmRB.board.load_board(file, i)
+                algorithmRB.randomBound(argv[3], i)
 
             # Starts breadthfirst algorithm
             elif sys.argv[2] == "breadthfirst":
-                algorithm.board.load_board(file, i)
-                algorithm.boards.append(algorithm.board)
-                algorithm.breadthFirst(i)
+                algorithmBF.board.load_board(file, i)
+                algorithmBF.boards.append(algorithmBF.board)
+                algorithmBF.breadthFirst(i)
             else:
                 print("invalid algorithm")
     else:
