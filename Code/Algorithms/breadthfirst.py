@@ -1,4 +1,4 @@
-from Classes.board import Board
+from Code.Classes.board import Board
 import copy as copy
 import time
 import queue

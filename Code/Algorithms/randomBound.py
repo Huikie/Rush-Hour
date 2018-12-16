@@ -1,4 +1,4 @@
-from Classes.board import Board
+from Code.Classes.board import Board
 import random
 from random import shuffle
 import copy as copy

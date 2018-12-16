@@ -1,4 +1,5 @@
 import copy as copy
+
 class Board:
     def __init__(self):
         self.board = []
@@ -171,7 +172,7 @@ class Board:
 
                 # Moves car vertically
                 self.move_vertically(moves, car, coordinate)
-                return True 
+                return True
 
             # Move cars up
             elif moves < 0:

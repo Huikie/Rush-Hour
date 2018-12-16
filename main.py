@@ -1,6 +1,6 @@
-from Algorithms.breadthfirst import Breadthfirst
-from Classes.board import Board
-from Algorithms.randomBound import RandomBound
+from Code.Algorithms.breadthfirst import Breadthfirst
+from Code.Classes.board import Board
+from Code.Algorithms.randomBound import RandomBound
 import sys
 import os.path
 
@@ -11,8 +11,8 @@ def main():
     i = 0
 
     # Checks if file board file exists
-    if os.path.exists(sys.argv[1]):
-        with open(sys.argv[1], "r") as file:
+    if os.path.exists("Data/"+sys.argv[1]):
+        with open("Data/"+sys.argv[1], "r") as file:
 
             # Gives the correct board size
             for i, l in enumerate(file):
@@ -20,7 +20,7 @@ def main():
             file.seek(0)
 
             # Starts Random bound algorithm
-            if sys.argv[2] == "random":
+            if sys.argv[2] == "randombound":
                 algorithm2.board.load_board(file, i)
                 algorithm2.randomBound(100, i)
 
