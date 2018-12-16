@@ -20,10 +20,18 @@ All python algorithms can be found in the folder algorithms, the code belonging 
 
 ### Testing
 
-To use the code with a standard pre-defined board (in this case Board_3 with the Breadth first algorithm) use the following command:
+To run the algorithms a standard command layout has to be used. The command always starts with "python main.py", then the name of the board you want to run ("... .txt"), followed by the algorithm ("breathfirst" or "randombound") and in the case of randombound the amount of iterations the algorithm should run (for example 1000).
+
+An example command that uses game_1 and the randombound algorithm:
 
 ```
-python main.py
+python main.py game_1.txt randombound 1000
+```
+
+An example command that uses game_1 and the breadthfirst algorithm:
+
+```
+python main.py game_1.txt breathfirst
 ```
 
 ## Authors
