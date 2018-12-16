@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 ### Structure
 
-All python algorithms can be found in the folder algorithms, the code belonging to the board and cars can be found in the folder classes, the state-space calculations in the folder state-space and the results in the results folder.
+All python algorithms can be found in the folder code/algorithms, the code belonging to the board can be found in the folder code/classes, the state-space calculations in the folder results/state-space and the results in the results folder.
 
 ### Testing
 
