@@ -23,7 +23,7 @@ def main():
             # Starts Random bound algorithm
             if sys.argv[2] == "randombound":
                 algorithmRB.board.load_board(file, i)
-                if sys.argv[3] > 0:
+                if int(sys.argv[3]) > 0:
                     algorithmRB.randomBound(sys.argv[3], i)
                 else:
                     print("Invalid iteration size.")
