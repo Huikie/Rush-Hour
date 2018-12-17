@@ -1,0 +1,90 @@
+Minimal Objective Function: 1 + BE
+
+1 = Because you always have to move the red car
+BE = Amount of cars/trucks that are blocking the exit
+
+
+Maximal State-space Function: (BS-1) ^ (SC) * (BS-2) ^ (AT)
+
+BS = Board size
+SC = Amount of small cars
+AT = Amount of trucks
+
+
+Game_1:
+- 6 Cars   (5 moves)
+- 3 Trucks (4 moves)
+
+Min objective function:   1 + 1 = 2
+Max state-space function: 5^6 * 4^3 = 10^6 (1000000)
+Total state-space:        11253
+
+
+Game_2:
+
+- 12 Cars (5 moves)
+- 1 Truck (4 moves)
+
+Min objective function:   1 + 2 = 3
+Max state-space function: 5^12 * 4^1 = 976562500
+Total state-space:        13842
+
+With some constraints:
+- 6 Cars  (Where there are two in the same row so 3 moves instead of 5)
+- 1 Truck (4 moves)
+- 5 Cars  (5 moves)
+
+> 3^6 * 4^1 * 5^5 = 9112500 = 9*10^6
+
+
+Game_3:
+
+- 12 Cars (5 moves)
+- 1 Truck (4 moves)
+
+Min objective function:   1 + 3 = 4
+Max state-space function: 5^12 * 4^1 = 976562500
+Total state-space:        819
+
+With some constraints:
+- 2 Cars (With only 2 possible moves)
+- 6 Cars (With 3 possible moves)
+- 4 Cars (5 moves)
+
+> 2^1 * 2^1 * 3^6 * 5^4 = 1822500
+
+
+Game_4:
+
+- 12 Cars   (8 moves)
+- 10 Trucks (7 moves)
+
+Min objective function:   1 + 2 = 3
+Max state-space function: 8^12 * 7^10 = 1.94115513e19
+
+
+Game_5:
+
+- 18 Cars  (8 moves)
+- 6 Trucks (7 moves)
+
+Min objective function:   1 + 1 = 2
+Max state-space function: 8^18 * 7^6 = 2.11937591e21
+
+
+Game_6:
+
+- 18 Cars  (8 moves)
+- 8 Trucks (7 moves)
+
+Min objective function:   1 + 2 = 3
+Max state-space function: 8^18 * 7^8 = 1.038494225e23
+
+
+Game_7:
+
+- 28 Cars (11 moves)
+- 16 Trucks (10 moves)
+
+Min objective function:   1 + 2 = 4
+Max state-space function: 11^12 * 10^16 = 3.138428377e28

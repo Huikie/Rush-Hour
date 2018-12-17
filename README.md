@@ -44,7 +44,7 @@ python main.py game_1.txt breathfirst
 
 **Team worthless Without coffee**
 
-## Acknowledgments (Special thanks to)
+## Acknowledgments (Special thanks)
 
 * Bas Terwijn
 * Minor programming at the University of Amsterdam

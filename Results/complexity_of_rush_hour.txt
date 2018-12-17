@@ -1,0 +1,42 @@
+Wat is het verschil tussen een moeilijke rushhour-opgave en een evengrote makkelijk rushhour opgave?
+
+Wij denken dat de complexiteit veroorzaakt wordt door een combinatie van het mogelijk aantal zetten per bord
+en het minimaal aantal zetten dat nodig is om het winnende board te vinden. Wij denken dat de onderstaande formule
+een goeie indicatie geeft van de complexiteit van een bord. Waarbij een lage score een indicatie is van een relatief
+eenvoudig bord en een hoge score een indicatie is van een relatief complex bord.
+
+> Minimaal aantal moves nodig voor winnend board ^ gemiddeld aantal mogelijke zetten per bord
+
+Ons vermoeden wordt allereerst onderbouwd door onze Breadthfirst berekeningen van bord 1, 2 en 3.
+ Zo heeft bord 2 slechts 15 zetten nodig om te worden opgelost, maar duurt het vinden van deze oplossing langer
+ dan bij bord 3, waar 21 zetten nodig zijn. Bij nadere inspectie valt dit naar ons idee te verklaren door het aantal
+ mogelijke zetten op ieder level van de Breadth first boom. Hoewel bord 2 minder zetten nodig heeft, zijn er op (bijna)
+ ieder level van de boom meer mogelijke zetten dan bij bord 3, wat het vinden van een oplossing compliceert.
+ Hierdoor is bord 2 in minder zetten op te lossen, maar complexer dan bord 3. Daarnaast is bord 1 complexer dan
+ bord 2 en bord 3, dit is logisch aangezien bord 1 opgelost kan worden in 33 zetten en op ieder level van de boom meer mogelijke
+ zetten heeft dan bord 2 en 3.
+
+Daarnaast wordt ons vermoeden ondersteund door onderzoek van [van Assema (2014)](https://staff.fnwi.uva.nl/b.bredeweg/pdf/BSc/20132014/VanAssema.pdf).
+Van Assema stelt onder andere dat de complexiteit van het oplossen van Rush Hour borden niet alleen te maken heeft met de minimale hoeveelheid zetten
+die gedaan moeten worden om tot een winnend bord te komen, maar ook met de hoeveelheid mogelijke configuraties vanuit een bepaalde configuratie.
+Van Assema illustreert dit door twee 6x6 rush hour borden te laten zien die beide met 31 zetten kunnen worden opgelost, maar het ene
+bord is veel complexer en lastiger op te lossen dan het andere. Dit komt doordat het ene bord steeds zeer veel mogelijke configuraties
+heeft (wat de breadth first boom enorm groot maakt), terwijl het andere bord dit niet heeft.
+
+Dit leidt ons tot de conclusie dat ons vermoeden wel eens kan kloppen en zowel het mogelijk aantal zetten per board en het minimaal
+aantal zetten dat nodig is om het winnende board te vinden van belang zijn.
+Dit wordt zoals eerder vermeld bevestigd door onze berkeningen bij bord 1, 2 en 3.
+
+
+
+Wat maakt een bord niet lastig
+
+De complexiteit van een bord is niet (alleen) afhankelijk van de grootte van het bord. Zo is test_board_0 (te vinden in de Data folder) een 
+groot bord van 9x9 met 5 auto's, maar het bord is in korte tijd (ongeveer 4 seconden) in slechts 4 zetten op te lossen. Een groot bord kan
+namelijk weinig auto's hebben waardoor het eenvoudig op te lossen is. Wanneer we echter meer auto's toevoegen wordt het voor de breadth first
+een stuk lastiger. Om dit te illustreren hebben we in test_board_1 ten opzichte van test_board_0 een extra auto toegevoegd, het algoritme
+vindt de oplossing van 5 zetten, maar doet er nu ongeveer 55 seconden over!
+
+De complexiteit van het bord is ook niet (alleen) afhankelijk van de hoeveelheid auto's die op het bord staan.
+Bijvoorbeeld test_board_2 (te vinden in de Data folder) is een klein bord van 6x6 met 13 auto's!
+Hoewel dit een hoop auto's zijn voor die grootte van het bord, kan het bord in slechts 10 zetten worden opgelost (in ongeveer 5 seconde).
