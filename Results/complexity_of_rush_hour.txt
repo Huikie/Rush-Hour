@@ -31,12 +31,12 @@ Dit wordt zoals eerder vermeld bevestigd door onze berkeningen bij bord 1, 2 en 
 
 Wat maakt een bord niet lastig
 
-De complexiteit van een bord is niet (alleen) afhankelijk van de grootte van het bord. Zo is test_board_0 (te vinden in de Data folder) een 
+- De complexiteit van een bord is volgens ons niet (alleen) afhankelijk van de grootte van het bord. Zo is test_board_0 (te vinden in de Data folder) een
 groot bord van 9x9 met 5 auto's, maar het bord is in korte tijd (ongeveer 4 seconden) in slechts 4 zetten op te lossen. Een groot bord kan
 namelijk weinig auto's hebben waardoor het eenvoudig op te lossen is. Wanneer we echter meer auto's toevoegen wordt het voor de breadth first
 een stuk lastiger. Om dit te illustreren hebben we in test_board_1 ten opzichte van test_board_0 een extra auto toegevoegd, het algoritme
 vindt de oplossing van 5 zetten, maar doet er nu ongeveer 55 seconden over!
 
-De complexiteit van het bord is ook niet (alleen) afhankelijk van de hoeveelheid auto's die op het bord staan.
+- De complexiteit van het bord is naar ons inzien ook niet (alleen) afhankelijk van de hoeveelheid auto's die op het bord staan.
 Bijvoorbeeld test_board_2 (te vinden in de Data folder) is een klein bord van 6x6 met 13 auto's!
 Hoewel dit een hoop auto's zijn voor die grootte van het bord, kan het bord in slechts 10 zetten worden opgelost (in ongeveer 5 seconde).
