@@ -33,7 +33,7 @@ python main.py game_1.txt randombound 100
 An example command that runs the *breadthfirst* algorithm on game 1:
 
 ```
-python main.py game_1.txt breathfirst
+python main.py game_1.txt breadthfirst
 ```
 
 ## Authors
