@@ -10,6 +10,9 @@ class Breadthfirst:
         self.boards = []
         self.archive = {}
         self.queue = queue.Queue()
+        """Function that runs the breadthfirst algorithm and stops if it has found
+        the best solution.
+        """
 
     def breadthFirst(self, size):
         self.start_time = time.time()
@@ -49,6 +52,8 @@ class Breadthfirst:
                         self.board_temp.move(car, -move)
 
     def won_info(self):
+        """Function that displays information about the results of the breadthfirst algorithm.
+        """
         counter = 2
 
         # Prints winning board.
