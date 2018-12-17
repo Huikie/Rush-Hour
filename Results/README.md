@@ -5,7 +5,7 @@ The results of running the random bound and breadth first algorithms can be foun
 * **CPU** - i7 5820k
 * **Ram** - 32GB at 2400MHz
 * **OS** - Windows 10 Professional
-
+\
 
 ## File content
 
@@ -23,7 +23,7 @@ In the state-space file the minimal objective function and maximal state-space f
 
 ### complexity_of_rush_hour.txt
 
-In this file we attempt to shed some light on the question of: what makes a rush hour board difficult? This file is in Dutch.
+In this file we attempt to shed some light on the question of: what makes a rush hour board difficult? This file is in Dutch.\
 
 
 *Disclaimer: Upon reproduction results might vary from the ones mentioned here. In case of the breadth first algorithm this might be due to a difference in hardware. In case of the random bound algorithm, this variation might be due to chance*
