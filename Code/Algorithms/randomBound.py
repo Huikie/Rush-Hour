@@ -80,6 +80,6 @@ class RandomBound:
         """
         elapsed_time = time.time() - self.start_time
         print("")
-        print("Best solution found after", self.iterationCount,"iterations: ", self.newbest ,"moves.")
+        print("Best solution found after", self.iterationCount,"iterations:", self.newbest ,"moves.")
         print("The algorithm took", round(elapsed_time, 2), "to complete", self.iterationCount, "iterations!\n")
         return True
