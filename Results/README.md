@@ -1,29 +1,29 @@
-Algorithm results:
+# Results
 
-Game 1 (6x6)\
-Breadth first result: 33 moves required, calculated in ~25 seconds\
-Random mover result: - 614 moves after 10000 iterations, calculated in ~12,5 minutes
+The results of running the random bound and breadth first algorithms can be found in this folder. The boards that we used our algorithms on can be found in the Data folder. All result files are saved with a .txt extension and are written in English. Only the file *complexity of rush hour* is written in Dutch. All the results were generated on a computer with the following specifications:
 
-Game 2 (6x6)\
-Breadth first result: 15 moves required, calculated in ~6.5 seconds\
-Random mover result: - 65 moves after 10000 iterations, calculated in ~5 minutes
+* **CPU** - i7 5820k
+* **Ram** - 32GB at 2400MHz
+* **OS** - Windows 10 Professional
 
-Game 3 (6x6)\
-Breadth first result: 21 moves required, calculated in ~2.5 second\
-Random mover result: 76 moves after 10000 iterations, calculated in ~6 minutes
 
-Game 4 (9x9)\
-Breadth first result: 27 moves required, calculated in ~20 minutes\
-Random mover result:  516 moves after 10000 iterations, calculated in ~33,5 minutes
+## File content
 
-Game 5 (9x9)\
-Breadth first result: Inconclusive (no results after running the algorithm ~12 hours)\
-Random mover result: 466 moves after 10000 iterations, calculated in ~26 minutes
+### breadthfirst.txt
 
-Game 6 (9x9)\
-Breadth first result: Inconclusive (no results after running the algorithm ~12 hours)\
-Random mover result: 190 moves after 10000 iterations, calculated in ~10,5 minutes
+In the breadth first file the results of running the breadth first algorithm can be found. Besides the breadth first algorithm results, the file also includes random bound results for each board. For each board the random bound was set on 10000 iterations.
 
-Game 7 (12x12)\
-Breadth first result: Inconclusive (no results after running the algorithm ~12 hours)\
-Random mover result: 805 moves after 10000 iterations, calculated in ~82 minutes
+### randombound.txt
+
+In this file more extensive random bound calculations have been done than the ones mentioned in the breadth first file. Here the results can be found of running the random bound algorithm 100 times on every board. Each time the algorithm was run with 1000 iterations. This instead of running the algorithm one time with 10000 iterations in the breadth first file. Only for game 7 was the algorithm run 50 times with 1000 iterations (due to the required calculation time).
+
+### state-space.txt
+
+In the state-space file the minimal objective function and maximal state-space function can be found. We've applied these functions to every board, giving an indication of the minimal and maximal moves needed to solve a board. Also for the first three board the total state space has been calculated.
+
+### complexity_of_rush_hour.txt
+
+In this file we attempt to shed some light on the question of: what makes a rush hour board difficult? This file is in Dutch.
+
+
+*Disclaimer: Upon reproduction results might vary from the ones mentioned here. In case of the breadth first algorithm this might be due to a difference in hardware. In case of the random bound algorithm, this variation might be due to chance*
