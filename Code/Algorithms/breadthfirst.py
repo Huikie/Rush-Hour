@@ -10,11 +10,12 @@ class Breadthfirst:
         self.boards = []
         self.archive = {}
         self.queue = queue.Queue()
-        """Function that runs the breadthfirst algorithm and stops if it has found
-        the best solution.
-        """
+
 
     def breadthFirst(self, size):
+        """Function that runs the breadthfirst algorithm and stops as soon
+        as it has found a solution.
+        """
         self.start_time = time.time()
         self.first_board = copy.deepcopy(self.board.board)
         self.queue.put(self.board)
@@ -57,14 +58,14 @@ class Breadthfirst:
         counter = 2
 
         # Prints winning board.
-        self.makeup(str([self.board_temp.board]))
+        self.printBoard(str([self.board_temp.board]))
 
         # Selects parent and prints it.
-        self.makeup(self.archive[str([self.board_temp.board])])
+        self.printBoard(self.archive[str([self.board_temp.board])])
 
         # Selects parent of parent and prints it.
         parent = self.archive[str([self.board_temp.board])]
-        self.makeup(self.archive[parent])
+        self.printBoard(self.archive[parent])
 
         # Prints parent board until the first board is reached.
         while self.archive[parent] != str([self.first_board]):
@@ -72,7 +73,7 @@ class Breadthfirst:
 
             # Selects parent of child and prints it.
             parent = self.archive[parent]
-            self.makeup(self.archive[parent])
+            self.printBoard(self.archive[parent])
 
         # Prints extra info.
         elapsed_time = time.time() - self.start_time
@@ -80,9 +81,11 @@ class Breadthfirst:
         print("\nThe algorithm took", round(elapsed_time, 2), "seconds to solve the board!")
         print("Minimum amount of moves required to win the game:", counter)
 
-    def makeup(self, board):
 
-        # Makes better representation of board.
+    def printBoard(self, board):
+        """Function that creates a better representation of the
+        board (making it easier to read) and prints it.
+        """
         board = board.replace("[","")
         board = board.replace(",","")
         board = board.replace("'","")
