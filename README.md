@@ -22,7 +22,7 @@ All python algorithms can be found in the folder code/algorithms, the code belon
 
 ### Testing
 
-To run the algorithms a standard command layout has to be used. The command always starts with "python main.py", then the name of the board you want to run ("... .txt"), followed by the algorithm ("breathfirst" or "randombound") and in the case of randombound the amount of iterations the algorithm should run (for example 100).
+To run the algorithms a standard command line layout has to be used. The command always starts with *python main.py*, then the name of the board you want to run ("... .txt"), followed by the algorithm ("breadthfirst" or "randombound") and in the case of randombound the amount of iterations the algorithm should run (for example 100).
 
 An example command that runs the *randombound* algorithm on game 1:
 
