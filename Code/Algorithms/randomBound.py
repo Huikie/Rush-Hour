@@ -13,8 +13,8 @@ class RandomBound:
     def randomBound(self, iterations, size):
         """Function that runs the randomMover a certain amount of times (iterations parameter)
            and puts a bound, so that the randMover will only look for better solutions.
-           Also the board size is important for the randMover, so the board size must be specified (size parameter)."""
-
+           Also the board size is important for the randMover, so the board size must be specified (size parameter).
+        """
         self.start_time = time.time()
         self.iterationCount = 0
         self.newbest = 0
@@ -47,7 +47,8 @@ class RandomBound:
 
     def randomMover(self, size):
         """Function that does a random move in a range of the size (size parameter) of
-           the board on a random car that is in the board."""
+           the board on a random car that is in the board.
+        """
         moves = 0
         self.board_temp = copy.deepcopy(self.board)
 
@@ -75,7 +76,8 @@ class RandomBound:
             return moves
 
     def won_info(self):
-        """Function that displays information about the results of the randomBound solver."""
+        """Function that displays information about the results of the randomBound solver.
+        """
         elapsed_time = time.time() - self.start_time
         print("")
         print("Best result found after", self.iterationCount," iterations: ", self.newbest)
