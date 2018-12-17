@@ -32,7 +32,7 @@ class RandomBound:
             if self.iterationCount == 0:
                 self.newbest = new_score
                 self.iterationCount += 1
-                print("Initial score is set ", new_score)
+                print("Initial solution found: ", new_score)
 
             # In the other iterations set newbest equal to a new_score if that's a better score.
             elif self.newbest > new_score:
