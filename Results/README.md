@@ -1,10 +1,11 @@
-# results
+# Results
 
 The results of running the random bound and breadth first algorithms can be found in this folder. All files are saved with a .txt extension and are written in English. Only the file complexity of rush hour is written in Dutch. All the results were generated on a computer with the following specifications:
 
 * **CPU** - i7 5820k
 * **Ram** - 32GB at 2400MHz
 * **OS** - Windows 10 Professional
+
 
 ## File content
 
