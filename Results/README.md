@@ -1,15 +1,15 @@
 Algorithm results:
 
 Game 1 (6x6)\
-Breadth first result: 33 moves required, calculated in ~15 seconds\
+Breadth first result: 33 moves required, calculated in ~25 seconds\
 Random mover result: - 614 moves after 10000 iterations, calculated in ~12,5 minutes
 
 Game 2 (6x6)\
-Breadth first result: 15 moves required, calculated in ~4 seconds\
+Breadth first result: 15 moves required, calculated in ~6.5 seconds\
 Random mover result: - 65 moves after 10000 iterations, calculated in ~5 minutes
 
 Game 3 (6x6)\
-Breadth first result: 21 moves required, calculated in ~1 second\
+Breadth first result: 21 moves required, calculated in ~2.5 second\
 Random mover result: 76 moves after 10000 iterations, calculated in ~6 minutes
 
 Game 4 (9x9)\

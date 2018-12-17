@@ -5,17 +5,18 @@ import sys
 import os.path
 
 def main():
-
+    """Function that makes it possible to run the algorithms form the command line.
+    """
     algorithmBF = Breadthfirst()
     algorithmRB = RandomBound()
     board = Board()
     i = 0
 
-    # Checks if file board file exists
+    # Checks if board file exists and if so opens it
     if os.path.exists("Data/"+sys.argv[1]):
         with open("Data/"+sys.argv[1], "r") as file:
 
-            # Gives the correct board size
+            # Gives the board size
             for i, l in enumerate(file):
                 i += 1
             file.seek(0)
