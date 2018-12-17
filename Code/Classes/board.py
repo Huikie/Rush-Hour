@@ -7,7 +7,8 @@ class Board:
         self.board_temp = []
 
     def select_board(self, size):
-        """Function that selects an appropriate board representation based on size."""
+        """Function that selects an appropriate board representation based on size.
+        """
         if size == 6:
             self.board = [
             ['#', '#', '#', '#', '#', '#', '#','#'],
@@ -56,7 +57,8 @@ class Board:
 
     def load_board(self, file, num):
         """Function that loads a file (file parameter) with a Rush Hour board into a board, if
-           the measures of the board in the file are a supported size (num parameter)."""
+           the measures of the board in the file are a supported size (num parameter).
+        """
 
         # Select a board based on the length of the board in the file
         self.select_board(num)
@@ -84,14 +86,16 @@ class Board:
 
     def won(self, size):
         """Function that checks if the red car (zz) stands on winning coordinates
-           this coordinates depend on the size of the board (size parameter)."""
+           this coordinates depend on the size of the board (size parameter).
+        """
         if self.cars["z"][1][1]  ==  size:
             return True
         else:
             return False
 
     def add(self, cars_dict):
-        """Function that sets the cars dictionary equal to a dictionary (cars_dict)"""
+        """Function that sets the cars dictionary equal to a dictionary (cars_dict).
+        """
         self.cars = cars_dict
 
     def move_horizontally(self, moves, car, coordinate):
@@ -118,7 +122,8 @@ class Board:
 
     def move(self, car, moves):
         """This function makes it possible to move a car (car parameter) in a
-        Rush Hour board with a certain amount of moves (moves parameter)."""
+        Rush Hour board with a certain amount of moves (moves parameter).
+        """
 
         # List that holds coordinates of all cars (keys) in the board as a value in the cars dictionary
         self.car_coordinates = []
